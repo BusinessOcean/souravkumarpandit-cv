@@ -1,0 +1,3 @@
+interface StyleClassName {
+    className?: string
+}
