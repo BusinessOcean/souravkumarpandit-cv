@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function RightDockPannel() {
     return (
-        <div className='sticky top-0 right-0 z-50 items-center content-center flex-none h-screen p-5 text-center bg-white shadow-sm hover:shadow-lg'>
+        <div className='sticky top-0 bottom-0 right-0 z-50 items-center content-center flex-none h-screen p-5 overflow-auto text-center bg-white shadow-sm hide-scroll-bar hover:shadow-lg'>
 
             <div className='relative'>
                 <SelectableIcon></SelectableIcon>

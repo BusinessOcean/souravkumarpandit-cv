@@ -9,7 +9,7 @@ import DownloadResume from '@/components/DownloadResume';
 
 export default function DrawerPannel() {
     return (
-        <div className='sticky top-0 left-0 z-50 flex flex-col flex-none h-screen px-8 bg-white py-14 hover:shadow-lg'>
+        <div className='sticky top-0 bottom-0 left-0 z-50 flex flex-col flex-none h-screen px-8 overflow-auto bg-white hide-scroll-bar py-14 hover:shadow-lg'>
             <div>
 
                 <div className='w-40 h-40 mb-6 text-center rounded-full ml-14 mr-14 avatar overflow-clip ' >
