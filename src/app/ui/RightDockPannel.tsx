@@ -9,7 +9,7 @@ export default function RightDockPannel() {
                 <SelectableIcon></SelectableIcon>
             </div>
 
-            <div className='flex flex-col items-center content-center justify-center object-center h-full gap-3'>
+            <div className='flex flex-col items-center content-center justify-center object-center gap-3 h-[calc(100%-48px)]'>
                 {items.map((e) => {
                     return (<div key={e} className=''>
                         <SelectableIcon></SelectableIcon>
@@ -21,3 +21,4 @@ export default function RightDockPannel() {
 }
 
 const items = [1, 2, 3, 4, 5, 6, 7]
+
