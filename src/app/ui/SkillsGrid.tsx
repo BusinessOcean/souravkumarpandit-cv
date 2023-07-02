@@ -1,18 +1,21 @@
 import TitleDescription from '@/components/TitleDescription'
 import React from 'react'
 import SkillCard from './SkillCard';
+import { getSkills } from '../../../sanity/sanity-query';
 
-export default function SkillsGrid() {
+export default async function SkillsGrid() {
+    const skills = await getSkills()
+
     return (
         <div className='w-full '>
             <TitleDescription
-                title='Skills' description='Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quos doloribus illo,voluptatum dolorem earum sequi adipisci aliquid, obcaecati eaque
-                cum vel porro dolores. Similique qui aliquid optio maiores modi sit!'/>
+                title={skills.title} description={skills.description} />
 
             <div className='grid self-center grid-cols-3 gap-5 pt-6 place-content-center'>
-                {items.map((number) => {
-                    return (<div className='px-12 pt-6 text-center bg-white border rounded pb-9' key={number}><SkillCard /></div>);
+                {skills.content.map((item: any) => {
+                    return (<div className='px-12 pt-6 text-center bg-white border rounded pb-9' key={item._key}>
+                        <SkillCard title={item.title} image={item.image} />
+                    </div>);
                 })}
 
 
@@ -23,4 +26,4 @@ export default function SkillsGrid() {
 }
 
 
-const items = [1, 2, 3, 4, 5, 6]
+// const items = [1, 2, 3, 4, 5, 6]

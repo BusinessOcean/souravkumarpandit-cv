@@ -2,9 +2,11 @@ import { createClient, groq } from "next-sanity";
 import clientconfig from "./config/clientconfig";
 import { Project } from "../schematypes/Project";
 
+const apiClient = createClient(clientconfig)
+
 export async function getProjects(): Promise<Project[]> {
-    return createClient(clientconfig).fetch(
-        groq`*[_type == "project"]{
+  return apiClient.fetch(
+    groq`*[_type == "project"]{
       _id,
       _createdAt,
       name,
@@ -13,5 +15,20 @@ export async function getProjects(): Promise<Project[]> {
       url,
       content
     }`
-    )
+  )
+}
+
+
+export async function getSkills(): Promise<any> {
+  let result = await createClient(clientconfig).fetch(
+    groq`*[_type == "skills"][0]{
+      _id,
+      _createdAt,
+      title,
+      description,
+      content
+    }`
+  )
+  console.log(result)
+  return result
 }
