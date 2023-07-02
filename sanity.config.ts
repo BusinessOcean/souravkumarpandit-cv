@@ -1,7 +1,6 @@
 import { defineConfig } from 'sanity'
 
 import { deskTool } from 'sanity/desk'
-import project from './sanity/schema/project-schema'
 import schemas from './sanity/schema/index'
 
 export default defineConfig({
