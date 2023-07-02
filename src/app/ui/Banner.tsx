@@ -21,7 +21,7 @@ export default function Banner() {
 
       <div className='z-1 flex flex-row relative'>
         <div className='pt-24 pb-24 pl-16 basis-4/6'>
-          <h1 className='space-x-2 text-4xl font-bold leading-normal '>I’m Sourav Kumar Pandit<br />
+          <h1 className='text-4xl font-bold leading-normal '>I’m Sourav Kumar Pandit<br />
             <span className='text-yellowes '>Full Stack</span> Developer.</h1>
 
           <h5 className='leading-5 text-blacky-300' > Lorem ipsum dolor sit amet, consectetur adipiscing elit.
