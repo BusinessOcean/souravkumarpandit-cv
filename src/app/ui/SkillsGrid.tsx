@@ -9,7 +9,7 @@ export default async function SkillsGrid() {
     return (
         <div className='w-full '>
             <TitleDescription
-                title={skills.title} description={skills.description} />
+                title={skills.title} content={skills.description} />
 
             <div className='grid self-center grid-cols-3 gap-5 pt-6 place-content-center'>
                 {skills.content.map((item: any) => {

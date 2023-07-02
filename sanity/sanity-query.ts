@@ -29,6 +29,5 @@ export async function getSkills(): Promise<any> {
       content
     }`
   )
-  console.log(result)
   return result
 }
