@@ -3,11 +3,11 @@ import { AppData } from '@/types/AppData.g';
 import { type } from 'os';
 import { createContext, useState, ReactNode, Dispatch, SetStateAction, useContext } from 'react';
 
-const appdata: AppData = { cvname: "Sourav Kumar Pandit" };
+const appdata: AppData | null = null
 
 type UpdateAppData = (data: AppData) => void
 
-export const AppDataContext = createContext<AppData>(appdata);
+export const AppDataContext = createContext<AppData | null>(appdata);
 export const UpdateAppDataContext = createContext<UpdateAppData | null>(null);
 
 
@@ -20,7 +20,7 @@ export function useUpdateAppData() {
   return useContext(UpdateAppDataContext)
 }
 export function AppDataProvider(props: { children: any }) {
-  const [data, setData] = useState<AppData>(appdata)
+  const [data, setData] = useState<AppData | null>(appdata)
   function updateAppData(data: AppData) {
     setData(data)
   }
