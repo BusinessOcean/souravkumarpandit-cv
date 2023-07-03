@@ -11,10 +11,12 @@ import ContactInfo from '@/components/ContactInfo'
 import Footer from '@/components/Footer'
 import CompanyTestimony from '@/components/CompanyTestimony'
 
-export default function MainContent() {
+export default function MainContent(props: any) {
+
+    const appdata = props.appdata
     return (
         <div className='flex flex-col w-full gap-16 mx-8 grow '>
-            <Banner />
+            <Banner appdata={appdata} />
             <SkillsGrid></SkillsGrid>
             <WorkTestimony></WorkTestimony>
             <Education></Education>

@@ -1,20 +1,22 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import DrawerPannel from './ui/DrawerPannel'
-import Banner from './ui/Banner'
 import RightDockPannel from './ui/RightDockPannel'
 import MainContent from './ui/MainContent'
-import { AppDataProvider } from '@/context/AppDataContext'
+import { getAppData } from '../../sanity/sanity-query'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default async function Home() {
+  const appdata = await getAppData()
+
   return (
     // <AppDataProvider>
+
     <main className="flex items-stretch justify-between bg-blacky-100">
-      <DrawerPannel ></DrawerPannel>
-      <MainContent></MainContent>
-      <RightDockPannel></RightDockPannel>
+      <DrawerPannel appdata={appdata} ></DrawerPannel>
+      <MainContent appdata={appdata}></MainContent>
+      <RightDockPannel appdata={appdata}></RightDockPannel>
     </main>
     // </AppDataProvider>
   )

@@ -1,8 +1,14 @@
 import React, { Component } from 'react'
 import Image from 'next/image';
 import BannerPattern from '../../../images/banner_pattern.svg'
-import DrawerPannel from './DrawerPannel';
-export default function Banner() {
+import { PortableText } from '@portabletext/react';
+import { urlFor } from '../../../sanity/sanity-utils';
+
+export default function Banner(props: any) {
+
+  const appdata = props.appdata
+
+
   return (
     <div className='w-full relative' >
       <Image
@@ -21,20 +27,24 @@ export default function Banner() {
 
       <div className='z-1 flex flex-row relative'>
         <div className='pt-24 pb-24 pl-16 basis-4/6'>
-          <h1 className='text-4xl font-bold leading-normal '>I’m Sourav Kumar Pandit<br />
+          <h1 className='text-4xl font-bold leading-normal '>I’m {appdata.cvname}<br />
             <span className='text-yellowes '>Full Stack</span> Developer.</h1>
 
-          <h5 className='leading-5 text-blacky-300' > Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Et, volutpat feugiat
-            placerat lobortis. Natoque rutrum semper
-            sed suspendisse nunc lectus.</h5>
+          <h5 className='leading-5 text-blacky-300' >
+            <PortableText value={appdata.objective} /> </h5>
           <button className='my-6 btn btn-info'>Hire Me</button>
         </div>
 
         <div className='flex items-center justify-center basis-2/6'>
-          <div className='rounded-md w-11 h-11 bg-blacky-600'>
-
-          </div>
+          <Image
+            className='w-max h-max object-contain'
+            src={urlFor(appdata.bannerImage).url()}
+            alt={appdata.bannerImage.alt}
+            width="0"
+            height="0"
+            unoptimized={true}
+            style={{ "backgroundBlendMode": 'multiply' }}
+          />
         </div>
       </div>
 
