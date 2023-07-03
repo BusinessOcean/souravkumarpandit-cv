@@ -31,3 +31,20 @@ export async function getSkills(): Promise<any> {
   )
   return result
 }
+
+export async function getAppData(): Promise<any> {
+  let result = await createClient(clientconfig).fetch(
+    groq`*[_type == "appdata"][0]{
+      _id,
+      _createdAt,
+      cvname,
+      cvrole,
+      email,
+      objective,
+      bannerImage,
+      profileImage
+    }`
+  )
+  console.log(result)
+  return result
+}
