@@ -8,7 +8,6 @@ type LabelProps = {
 }
 
 export default function SkillCard({ title, image }: LabelProps) {
-    // console.log(image)
     return (
         <div className='flex flex-col self-center place-items-center text-blacky-300 h-20'>
             {/* <IconLaptopCode className='w-20 h-20 text-yellowes'></IconLaptopCode> */}

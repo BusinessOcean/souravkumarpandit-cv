@@ -45,6 +45,5 @@ export async function getAppData(): Promise<any> {
       profileImage
     }`
   )
-  console.log(result)
   return result
 }
