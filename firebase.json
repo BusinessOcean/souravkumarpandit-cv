@@ -11,6 +11,10 @@
       {
         "source": "**",
         "destination": "/index.html"
+      },
+      {
+        "destination": "/admin/[**]/index.html",
+        "regex": "^/job/([^/]+?)(?:/)?$"
       }
     ]
   }
