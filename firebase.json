@@ -14,7 +14,7 @@
       },
       {
         "destination": "/admin/[**]/index.html",
-        "regex": "^/job/([^/]+?)(?:/)?$"
+        "regex": "^/admin/([^/]+?)(?:/)?$"
       }
     ]
   }
