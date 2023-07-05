@@ -3,16 +3,19 @@ import DrawerPannel from './ui/DrawerPannel'
 import RightDockPannel from './ui/RightDockPannel'
 import MainContent from './ui/MainContent'
 import { getAppData } from '../../sanity/sanity-query'
+import { AppDataContext, AppDataContextProvider } from '@/context/AppDataContext'
 
 // const inter = Inter({ subsets: ['latin'] })
 
 export default async function Home() {
-  const data = await getAppData()
+  const appdata = await getAppData()
   return (
-    < main className="flex items-stretch justify-between bg-blacky-100" >
-      <DrawerPannel appdata={data} ></DrawerPannel>
-      <MainContent appdata={data}></MainContent>
-      <RightDockPannel appdata={data}></RightDockPannel>
-    </main >
+    <AppDataContextProvider data={appdata} >
+      < main className="flex items-stretch justify-between bg-blacky-100" >
+        <DrawerPannel  ></DrawerPannel>
+        <MainContent ></MainContent>
+        <RightDockPannel ></RightDockPannel>
+      </main >
+    </AppDataContextProvider>
   )
 }

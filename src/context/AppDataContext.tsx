@@ -1,18 +1,26 @@
 "use client"
 import { AppData } from "@/types/AppData.g";
-import { createContext, useState } from "react";
+import { Dispatch, PropsWithChildren, SetStateAction, createContext, useContext, useState } from "react";
+import { getAppData } from "../../sanity/sanity-query";
 
+// type AppDataStore = { appdata: AppData | null, setAppData: Dispatch<SetStateAction<AppData | null>> }
 
-const AppDataContext = createContext<any | null>(null)
+const AppDataContext = createContext<AppData | null>(null)
 
-const AppDataContextProvider = ({ children }: any) => {
-  const [appdata, setAppData] = useState<AppData | null>(null);
-  // { appdata: appdata, setAppData }
+const AppDataContextProvider = ({ data, children }: PropsWithChildren<{ data: AppData }>) => {
+  const [appdata, setAppData] = useState<AppData | null>(data);
+
   return (
-    <AppDataContext.Provider value={{ appdata: appdata, setAppData }}>
-      {...children}
+    <AppDataContext.Provider value={appdata}>
+      {children}
     </AppDataContext.Provider>
   );
 };
 
-export { AppDataContext, AppDataContextProvider };
+
+function useAppDataContext() {
+  const value = useContext(AppDataContext);
+  return value
+
+}
+export { AppDataContext, AppDataContextProvider, useAppDataContext };

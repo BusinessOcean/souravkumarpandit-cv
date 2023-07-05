@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Banner from './Banner'
 import SkillsGrid from './SkillsGrid'
@@ -10,13 +11,14 @@ import ContactForm from '@/components/ContactForm'
 import ContactInfo from '@/components/ContactInfo'
 import Footer from '@/components/Footer'
 import CompanyTestimony from '@/components/CompanyTestimony'
+import { useAppDataContext } from '@/context/AppDataContext'
 
-export default function MainContent(props: any) {
+export default function MainContent() {
 
-    const appdata = props.appdata
+    const appdata = useAppDataContext()!
     return (
         <div className='flex flex-col w-full gap-16 mx-8 grow '>
-            <Banner appdata={appdata} />
+            <Banner />
             <SkillsGrid></SkillsGrid>
             <WorkTestimony></WorkTestimony>
             <Education></Education>

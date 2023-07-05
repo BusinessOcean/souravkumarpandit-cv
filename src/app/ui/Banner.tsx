@@ -1,12 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Image from 'next/image';
 import BannerPattern from '../../../images/banner_pattern.svg'
 import { PortableText } from '@portabletext/react';
 import { urlFor } from '../../../sanity/sanity-utils';
+import { useAppDataContext } from '@/context/AppDataContext';
 
-export default function Banner(props: any) {
+export default function Banner() {
 
-  const appdata = props.appdata
+  const appdata = useAppDataContext()!
 
 
   return (
