@@ -3,7 +3,7 @@ import DrawerPannel from './ui/DrawerPannel'
 import RightDockPannel from './ui/RightDockPannel'
 import MainContent from './ui/MainContent'
 import { getAppData } from '../../sanity/sanity-query'
-import { AppDataContext, AppDataContextProvider } from '@/context/AppDataContext'
+import { AppDataContextProvider } from '@/context/AppDataContext'
 
 // const inter = Inter({ subsets: ['latin'] })
 
