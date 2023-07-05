@@ -6,4 +6,5 @@ export type AppData = {
   profileImage: any;
   cvrole: string;
   email: string;
+  extrakeyvalue: any;
 };

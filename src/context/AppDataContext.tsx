@@ -1,9 +1,6 @@
 "use client"
 import { AppData } from "@/types/AppData.g";
-import { Dispatch, PropsWithChildren, SetStateAction, createContext, useContext, useState } from "react";
-import { getAppData } from "../../sanity/sanity-query";
-
-// type AppDataStore = { appdata: AppData | null, setAppData: Dispatch<SetStateAction<AppData | null>> }
+import { PropsWithChildren, createContext, useContext, useState } from "react";
 
 const AppDataContext = createContext<AppData | null>(null)
 

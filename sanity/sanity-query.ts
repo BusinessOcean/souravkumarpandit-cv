@@ -2,7 +2,7 @@ import { createClient, groq } from "next-sanity";
 import clientconfig from "./config/clientconfig";
 import { Project } from "../schematypes/Project";
 
-const apiClient = createClient(clientconfig)
+const apiClient = createClient(clientconfig);
 
 export async function getProjects(): Promise<Project[]> {
   return apiClient.fetch(
@@ -15,9 +15,8 @@ export async function getProjects(): Promise<Project[]> {
       url,
       content
     }`
-  )
+  );
 }
-
 
 export async function getSkills(): Promise<any> {
   let result = await createClient(clientconfig).fetch(
@@ -28,8 +27,8 @@ export async function getSkills(): Promise<any> {
       description,
       content
     }`
-  )
-  return result
+  );
+  return result;
 }
 
 export async function getAppData(): Promise<any> {
@@ -42,8 +41,10 @@ export async function getAppData(): Promise<any> {
       email,
       objective,
       bannerImage,
-      profileImage
+      profileImage,
+      extrakeyvalue,
     }`
-  )
-  return result
+  );
+  console.log(result);
+  return result;
 }

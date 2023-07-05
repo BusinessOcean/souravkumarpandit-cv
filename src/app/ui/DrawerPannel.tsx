@@ -42,7 +42,7 @@ export default function DrawerPannel() {
             <div className=' divider'></div>
 
             <div className='flex flex-col gap-2 '>
-                {items.map((e) => { return (<InfoTile key={e} />) })}
+                {appdata.extrakeyvalue.map((e: any) => { return (<InfoTile key={e._id} label={e.label} value={e.value} />) })}
             </div>
 
             <div className=' divider'></div>
