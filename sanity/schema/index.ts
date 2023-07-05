@@ -1,8 +1,9 @@
 import appdata from "./app-data-schema";
-import careerskills from "./career-skills-schema";
+import careermain from "./career-main-schema";
 import project from "./project-schema";
+import careerskills from "./skill-schema";
 
 
-const schemas = [project, careerskills, appdata]
+const schemas = [careerskills, careermain, appdata]
 
 export default schemas;

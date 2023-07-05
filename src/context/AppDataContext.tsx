@@ -1,33 +1,23 @@
 "use client"
-import { AppData } from '@/types/AppData.g';
-import { type } from 'os';
-import { createContext, useState, ReactNode, Dispatch, SetStateAction, useContext } from 'react';
+import { AppData } from "@/types/AppData.g";
+import { PropsWithChildren, createContext, useContext, useState } from "react";
 
-const appdata: AppData | null = null
+const AppDataContext = createContext<AppData | null>(null)
 
-type UpdateAppData = (data: AppData) => void
+const AppDataContextProvider = ({ data, children }: PropsWithChildren<{ data: AppData }>) => {
+  const [appdata, setAppData] = useState<AppData | null>(data);
 
-export const AppDataContext = createContext<AppData | null>(appdata);
-export const UpdateAppDataContext = createContext<UpdateAppData | null>(null);
+  return (
+    <AppDataContext.Provider value={appdata}>
+      {children}
+    </AppDataContext.Provider>
+  );
+};
 
 
-export function useAppData() {
-  return useContext(AppDataContext)
+function useAppDataContext() {
+  const value = useContext(AppDataContext);
+  return value
+
 }
-
-
-export function useUpdateAppData() {
-  return useContext(UpdateAppDataContext)
-}
-export function AppDataProvider(props: { children: any }) {
-  const [data, setData] = useState<AppData | null>(appdata)
-  function updateAppData(data: AppData) {
-    setData(data)
-  }
-
-  return <AppDataContext.Provider value={data}>
-    {/* <UpdateAppDataContext.Provider value={updateAppData}> */}
-    {props.children}
-    {/* </UpdateAppDataContext.Provider> */}
-  </AppDataContext.Provider>
-}
+export { AppDataContext, AppDataContextProvider, useAppDataContext };

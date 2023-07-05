@@ -10,9 +10,9 @@
 //     description: PortableTextBlock[];
 // }
 
-const careerskills = {
-    name: "skills",
-    title: "Skills",
+const maincontent = {
+    name: "maincontent",
+    title: "Main Content",
     type: "document",
     fields: [
         {
@@ -60,4 +60,4 @@ const careerskills = {
     ]
 }
 
-export default careerskills;
+export default maincontent;

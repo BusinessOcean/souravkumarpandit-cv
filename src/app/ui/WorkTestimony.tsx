@@ -1,7 +1,6 @@
 import TestimonyCard from '@/components/TestimonyCard';
 import TitleDescription from '@/components/TitleDescription'
 import React from 'react'
-import SkillCard from './SkillCard';
 
 export default function WorkTestimony() {
     return (

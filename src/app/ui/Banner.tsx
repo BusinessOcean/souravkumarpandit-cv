@@ -1,16 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Image from 'next/image';
 import BannerPattern from '../../../images/banner_pattern.svg'
 import { PortableText } from '@portabletext/react';
 import { urlFor } from '../../../sanity/sanity-utils';
+import { useAppDataContext } from '@/context/AppDataContext';
 
-export default function Banner(props: any) {
+export default function Banner() {
 
-  const appdata = props.appdata
+  const appdata = useAppDataContext()!
 
 
   return (
-    <div className='w-full relative' >
+    <div className='w-full relative' id="home" >
       <Image
         className='absolute z-0'
         src={BannerPattern}
@@ -27,11 +28,12 @@ export default function Banner(props: any) {
 
       <div className='z-1 flex flex-row relative'>
         <div className='pt-24 pb-24 pl-16 basis-4/6'>
-          <h1 className='text-4xl font-bold leading-normal '>I’m {appdata.cvname}<br />
+          <h1 className='text-4xl font-bold leading-normal '>I'm {appdata.cvname}<br />
             <span className='text-yellowes '>Full Stack</span> Developer.</h1>
 
-          <h5 className='leading-5 text-blacky-300' >
-            <PortableText value={appdata.objective} /> </h5>
+          <h5 className='leading-8 text-blacky-300 pr-14 py-5 ' >
+            <PortableText value={appdata.objective} />
+          </h5>
           <button className='my-6 btn btn-info'>Hire Me</button>
         </div>
 

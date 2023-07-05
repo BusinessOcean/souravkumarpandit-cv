@@ -7,7 +7,7 @@ export default async function SkillsGrid() {
     const skills = await getSkills()
 
     return (
-        <div className='w-full '>
+        <div id='skills' className='w-full '>
             <TitleDescription
                 title={skills.title} content={skills.description} />
 

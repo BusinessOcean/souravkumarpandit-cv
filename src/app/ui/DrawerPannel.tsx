@@ -1,5 +1,5 @@
+"use client"
 import React from 'react';
-import MyImage from '../../../images/my_pic.jpeg';
 import Image from 'next/image';
 import IconLaptopCode from '@/resource/icons/LaptopCode';
 import InfoTile from '@/components/InfoTile';
@@ -7,10 +7,11 @@ import SkillPercentageRaiting from '@/components/SkillPercentageRaiting';
 import ExtraSkills from '@/components/ExtraSkills';
 import DownloadResume from '@/components/DownloadResume';
 import { urlFor } from '../../../sanity/sanity-utils';
+import { useAppDataContext } from '@/context/AppDataContext';
 
-export default function DrawerPannel(props: any) {
+export default function DrawerPannel() {
 
-    const appdata = props.appdata
+    const appdata = useAppDataContext()!
 
     return (
         <div className='sticky top-0 bottom-0 left-0 z-50 flex flex-col flex-none h-screen px-8 overflow-auto bg-white hide-scroll-bar py-14 hover:shadow-lg'>
@@ -41,7 +42,7 @@ export default function DrawerPannel(props: any) {
             <div className=' divider'></div>
 
             <div className='flex flex-col gap-2 '>
-                {items.map((e) => { return (<InfoTile key={e} />) })}
+                {appdata.extrakeyvalue.map((e: any) => { return (<InfoTile key={e._id} label={e.label} value={e.value} />) })}
             </div>
 
             <div className=' divider'></div>
