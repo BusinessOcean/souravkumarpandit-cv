@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function Education() {
     return (
-        <div>
+        <div id='education'>
             <TitleDescription title='Education' description='Amet minim mollit non deserunt ullamco est sit aliqua dolor 
         do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum'></TitleDescription>
 

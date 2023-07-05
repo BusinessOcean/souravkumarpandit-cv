@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function Blogs() {
     return (
-        <>
+        <div id='achivement'>
             <TitleDescription title='Blog' description='Amet minim mollit non deserunt ullamco est sit 
             aliqua dolor do amet sint. Velit officia consequat duis 
             enim velit mollit. lorem ipsum'></TitleDescription>
@@ -16,7 +16,7 @@ export default function Blogs() {
                     })
                 }
             </div>
-        </>
+        </div>
     )
 }
 
