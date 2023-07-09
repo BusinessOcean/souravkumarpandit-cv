@@ -43,6 +43,7 @@ export async function getAppData(): Promise<any> {
       bannerImage,
       profileImage,
       extrakeyvalue,
+      social,
     }`
   );
   console.log(result);

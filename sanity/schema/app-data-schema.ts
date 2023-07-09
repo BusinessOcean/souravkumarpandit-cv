@@ -55,16 +55,27 @@ const appdata = {
     },
 
     {
-      name: "content",
-      title: "Content",
+      name: "social",
+      title: "Social",
       type: "array",
       of: [
         {
           name: "image",
           title: "Image",
           type: "image",
-          options: { hotspot: true },
+          // options: { hotspot: true },
           fields: [
+
+            {
+              name: "name",
+              title: "Name",
+              type: "string",
+            },
+            {
+              name: "link",
+              title: "Link",
+              type: "string",
+            },
             {
               name: "alt",
               title: "Alt",

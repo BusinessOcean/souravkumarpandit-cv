@@ -7,4 +7,5 @@ export type AppData = {
   cvrole: string;
   email: string;
   extrakeyvalue: any;
+  social: any
 };

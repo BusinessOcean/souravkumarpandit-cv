@@ -8,10 +8,14 @@ import ExtraSkills from '@/components/ExtraSkills';
 import DownloadResume from '@/components/DownloadResume';
 import { urlFor } from '../../../sanity/sanity-utils';
 import { useAppDataContext } from '@/context/AppDataContext';
+import LinkImageIcon from '@/resource/LinkImageIcon';
 
 export default function DrawerPannel() {
 
     const appdata = useAppDataContext()!
+
+    const social = appdata.social
+
 
     return (
         <div className='sticky top-0 bottom-0 left-0 z-50 flex flex-col flex-none h-screen px-8 overflow-auto bg-white hide-scroll-bar py-14 hover:shadow-lg'>
@@ -30,12 +34,17 @@ export default function DrawerPannel() {
                     </h6>
                 </div>
                 <div className='flex justify-between gap-2 my-3 '>
-                    <IconLaptopCode className='flex items-center justify-center p-2 rounded-full hover:scale-110 w-9 h-9 bg-yellowes'></IconLaptopCode>
-                    <IconLaptopCode className='flex items-center justify-center p-2 rounded-full hover:scale-110 w-9 h-9 bg-yellowes'></IconLaptopCode>
-                    <IconLaptopCode className='flex items-center justify-center p-2 rounded-full hover:scale-110 w-9 h-9 bg-yellowes'></IconLaptopCode>
-                    <IconLaptopCode className='flex items-center justify-center p-2 rounded-full hover:scale-110 w-9 h-9 bg-yellowes'></IconLaptopCode>
-                    <IconLaptopCode className='flex items-center justify-center p-2 rounded-full hover:scale-110 w-9 h-9 bg-yellowes'></IconLaptopCode>
-                    <IconLaptopCode className='flex items-center justify-center p-2 rounded-full hover:scale-110 w-9 h-9 bg-yellowes'></IconLaptopCode>
+
+                    {
+                        social.map((e: any) => {
+                            return (<div key={e.alt} className='flex items-center justify-center p-1 rounded-full hover:scale-110 w-9 h-9 bg-slate-100'  >
+                                <LinkImageIcon social={e}></LinkImageIcon>
+                            </div>)
+                        })
+
+                    }
+
+
                 </div>
 
             </div>

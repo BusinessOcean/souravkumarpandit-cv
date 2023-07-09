@@ -52,7 +52,6 @@ export default function RightDockPannel() {
             <div className='relative'>
                 <SelectableIcon label='Theme' sectiontag='theme'> < MdDarkMode /> </SelectableIcon>
             </div>
-
             <div className='flex flex-col items-center content-center justify-center object-center gap-3 h-[calc(100%-48px)]'>
                 {navIconsList.map((e) => {
                     return (<div key={e.label} className=''>
