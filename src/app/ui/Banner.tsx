@@ -27,7 +27,7 @@ export default function Banner() {
       />
 
       <div className='z-1 flex flex-row relative'>
-        <div className='pt-24 pb-24 pl-16 basis-4/6'>
+        <div className='pt-14 pb-14 pl-16 basis-4/6'>
           <h1 className='text-4xl font-bold leading-normal '>I&apos;m {appdata.cvname}<br />
             <span className='text-yellowes '>Full Stack</span> Developer.</h1>
 
