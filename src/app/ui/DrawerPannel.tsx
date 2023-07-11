@@ -51,7 +51,7 @@ export default function DrawerPannel() {
             <div className=' divider'></div>
 
             <div className='flex flex-col gap-2 '>
-                {appdata.extrakeyvalue.map((e: any) => { return (<InfoTile key={e._id} label={e.label} value={e.value} />) })}
+                {appdata.extrakeyvalue.map((e: any) => { return (<InfoTile key={e._key} label={e.label} value={e.value} />) })}
             </div>
 
             <div className=' divider'></div>
@@ -71,5 +71,3 @@ export default function DrawerPannel() {
         </div>
     )
 }
-
-const items = [1, 2, 3, 4, 5, 6, 7]
