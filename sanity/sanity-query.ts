@@ -46,6 +46,32 @@ export async function getAppData(): Promise<any> {
       social,
     }`
   );
-  console.log(result);
+  return result;
+}
+
+
+export async function getProgramingSkills(): Promise<any> {
+  let result = await createClient(clientconfig).fetch(
+    groq`*[_type == "skillrating"][0]{
+      _id,
+      _createdAt,
+      title,
+      skill_sets,
+    }`
+  );
+
+  return result;
+}
+
+
+export async function getSoftwareSkills(): Promise<any> {
+  let result = await createClient(clientconfig).fetch(
+    groq`*[_type == "skillrating"][1]{
+      _id,
+      _createdAt,
+      title,
+      skill_sets,
+    }`
+  );
   return result;
 }

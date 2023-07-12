@@ -1,31 +1,31 @@
-import React from 'react'
 
-export default function SkillPercentageRaiting({ title }: SkillPercentageRaitingProps) {
+export default function SkillPercentageRaiting({ title, skillSets }: SkillPercentageRaitingProps) {
+
     return (
         <div>
             <h3 className='pb-3 font-bold text-blacky-400'> {title}</h3>
             <div className='flex flex-col gap-2 '>
-                {items.map((e) => {
+                {skillSets.map((e: any) => {
                     return (
-                        <div key={e}>
+                        <div key={e._key}>
                             <div className='flex flex-col'>
                                 <div className='flex justify-between text-blacky-300'>
-                                    <h5 className='text-sm'>Flutter</h5>
-                                    <div>{10 * e + 50}</div>
+                                    <h5 className='text-sm pb-2'>{e.label}</h5>
+                                    {/* <div>{e.percent}</div> */}
                                 </div>
-                                <progress className="w-56 progress progress-primary" value={10 * e + 50} max="100"></progress>
+                                <progress className="w-full progress progress-primary" value={e.percent} max="100"></progress>
 
                             </div>
                         </div>
                     )
-                })}
+                })
+                }
             </div>
-
         </div>
     )
 }
 interface SkillPercentageRaitingProps {
     title: string
+    skillSets: any
 }
 
-const items = [1, 2, 3, 4, 5]

@@ -9,12 +9,18 @@ import DownloadResume from '@/components/DownloadResume';
 import { urlFor } from '../../../sanity/sanity-utils';
 import { useAppDataContext } from '@/context/AppDataContext';
 import LinkImageIcon from '@/resource/LinkImageIcon';
+import { getProgramingSkills, getSoftwareSkills } from '../../../sanity/sanity-query';
 
-export default function DrawerPannel() {
+export default async function DrawerPannel() {
 
     const appdata = useAppDataContext()!
 
     const social = appdata.social
+
+    const programingSkills = await getProgramingSkills()
+    const softwareSkills = await getSoftwareSkills()
+    console.log(programingSkills)
+    console.log(softwareSkills)
 
 
     return (
@@ -55,9 +61,9 @@ export default function DrawerPannel() {
             </div>
 
             <div className=' divider'></div>
-            <SkillPercentageRaiting title='Languages'></SkillPercentageRaiting>
+            <SkillPercentageRaiting title={programingSkills.title} skillSets={programingSkills.skill_sets} ></SkillPercentageRaiting>
             <div className=' divider'></div>
-            <SkillPercentageRaiting title='Skills'></SkillPercentageRaiting>
+            <SkillPercentageRaiting title={softwareSkills.title} skillSets={softwareSkills.skill_sets}></SkillPercentageRaiting>
             <div className=' divider'></div>
             <ExtraSkills title='Extra Skills'></ExtraSkills>
             <div className=' divider'></div>
