@@ -1,17 +1,20 @@
 import IconLaptopCode from '@/resource/icons/LaptopCode'
 import React from 'react'
+import { getExtraSkills } from '../../sanity/sanity-query'
 
-export default function ExtraSkills({ title }: ExtraSkillsProps) {
+export default async function ExtraSkills() {
+    const skillTags = await getExtraSkills()
+
     return (
-        <div>
-            <h3 className='pb-3 font-bold text-blacky-400'> {title}</h3>
-            <div className='flex flex-col gap-2 '>
-                {items.map((e) => {
+        <div className='w-52'>
+            <h3 className='pb-3 font-bold text-blacky-400'> {"Extra Skills"}</h3>
+            <div className='    flex flex-wrap flex-grow space-x-2'>
+                {skillTags.map((e: any) => {
                     return (
-                        <div key={e}>
-                            <div className='flex items-center gap-4'>
-                                <IconLaptopCode className='text-yellowes' />
-                                <h5 className='text-sm text-blacky-300'>Git Knowledge,Flutter,Dart</h5>
+                        <div key={e._key}>
+                            <div className='badge  badge-secondary'>
+
+                                <h5 className='text-sm text-blacky-100'>{e.label}</h5>
                             </div>
                         </div>
                     )
@@ -21,10 +24,3 @@ export default function ExtraSkills({ title }: ExtraSkillsProps) {
         </div>
     )
 }
-
-
-interface ExtraSkillsProps {
-    title: string
-}
-
-const items = [1, 2, 3, 4, 5]

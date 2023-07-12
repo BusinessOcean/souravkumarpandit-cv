@@ -75,3 +75,15 @@ export async function getSoftwareSkills(): Promise<any> {
   );
   return result;
 }
+
+
+export async function getExtraSkills(): Promise<any> {
+  let result = await createClient(clientconfig).fetch(
+    groq`*[_type == "skillstags"]{
+      _id,
+      _createdAt,
+      label,
+    }`
+  );
+  return result;
+}

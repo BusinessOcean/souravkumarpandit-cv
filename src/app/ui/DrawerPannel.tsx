@@ -19,10 +19,6 @@ export default async function DrawerPannel() {
 
     const programingSkills = await getProgramingSkills()
     const softwareSkills = await getSoftwareSkills()
-    console.log(programingSkills)
-    console.log(softwareSkills)
-
-
     return (
         <div className='sticky top-0 bottom-0 left-0 z-50 flex flex-col flex-none h-screen px-8 overflow-auto bg-white hide-scroll-bar py-14 hover:shadow-lg'>
             <div>
@@ -65,7 +61,7 @@ export default async function DrawerPannel() {
             <div className=' divider'></div>
             <SkillPercentageRaiting title={softwareSkills.title} skillSets={softwareSkills.skill_sets}></SkillPercentageRaiting>
             <div className=' divider'></div>
-            <ExtraSkills title='Extra Skills'></ExtraSkills>
+            <ExtraSkills ></ExtraSkills>
             <div className=' divider'></div>
 
             <DownloadResume></DownloadResume>
