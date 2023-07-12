@@ -2,9 +2,9 @@ export default function LoadingSkeleton() {
     return (
 
         <section className="text-gray-700 body-font">
-            <div className="container px-5 py-24 mx-auto">
-                <div className="flex flex-wrap -m-4">
-                    <div className="p-4 md:w-1/3">
+            <div className=" w-full">
+                <div className="flex  ">
+                    <div className="p-4  w-80">
                         <div className="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
                             <div className="lg:h-48 bg-gray-400 md:h-36 w-full object-cover object-center"></div>
                             <div className="p-6">
@@ -23,7 +23,7 @@ export default function LoadingSkeleton() {
                             </div>
                         </div>
                     </div>
-                    <div className="p-4 md:w-1/3">
+                    <div className="p-4 w-full h-screen">
                         <div className="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
                             <div className="lg:h-48 bg-gray-400 md:h-36 w-full object-cover object-center"></div>
                             <div className="p-6">
@@ -44,7 +44,7 @@ export default function LoadingSkeleton() {
                             </div>
                         </div>
                     </div>
-                    <div className="p-4 md:w-1/3">
+                    <div className="p-4 w-24">
                         <div className="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
                             <div className="lg:h-48 bg-gray-400 md:h-36 w-full object-cover object-center"></div>
                             <div className="p-6">
