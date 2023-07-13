@@ -1,11 +1,19 @@
 import React from 'react'
+import Image from 'next/image';
+import { getCompanys } from '../../sanity/sanity-query';
+import { urlFor } from '../../sanity/sanity-utils';
 
-export default function CompanyTestimony() {
+export default async function CompanyTestimony() {
+    const companys = await getCompanys()
     return (
         <div className='grid items-center self-center w-full grid-cols-4 gap-5 pt-6 place-items-center'>
-            {items.map((number) => {
-                return (<div className='w-32 h-32 aspect-square bg-yellowes ' key={number}>
-                </div>);
+            {companys.map((e: any) => {
+                return (
+
+                    <Image key={e._id} alt={e.image.alt} className='w-full h-32 aspect-square w-full,'
+                        src={urlFor(e.image).url()} width="500" height="500"   ></Image>
+
+                );
             })}
         </div>
 
@@ -13,5 +21,3 @@ export default function CompanyTestimony() {
     )
 }
 
-
-const items = [1, 2, 3, 4];

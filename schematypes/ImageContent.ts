@@ -6,11 +6,11 @@ type Image = {
 
 }
 
-type ImagesGallary = Image[]
+// type ImagesGallary = Image[]
 
-type ImageContent = {
-    title: string
-    imageUrl: string
-    link: string
-    description: PortableTextBlock[];
-}
+// type ImageContent = {
+//     title: string
+//     imageUrl: string
+//     link: string
+//     description: PortableTextBlock[];
+// }

@@ -87,3 +87,17 @@ export async function getExtraSkills(): Promise<any> {
   );
   return result;
 }
+
+
+
+export async function getCompanys(): Promise<Array<any>> {
+  let result = await createClient(clientconfig).fetch(
+    groq`*[_type == "companys"]{
+      _id,
+      _createdAt,
+      companyTitle,
+      image
+    }`
+  );
+  return result;
+}
