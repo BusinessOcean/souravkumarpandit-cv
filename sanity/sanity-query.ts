@@ -101,3 +101,16 @@ export async function getCompanys(): Promise<Array<any>> {
   );
   return result;
 }
+
+
+export async function getGallaryImages(): Promise<Array<any>> {
+  let result = await createClient(clientconfig).fetch(
+    groq`*[_type == "gallaryimages"]{
+      _id,
+      _createdAt,
+      tags,
+      image
+    }`
+  );
+  return result;
+}

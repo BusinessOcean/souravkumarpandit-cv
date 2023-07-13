@@ -18,7 +18,7 @@ export default function MainContent() {
         <div className='flex flex-col w-full gap-16 mx-8 grow '>
             <Banner />
             <SkillsGrid></SkillsGrid>
-            <WorkTestimony></WorkTestimony>
+            {/* <WorkTestimony></WorkTestimony> */}
             <Education></Education>
 
             <WorkHistory></WorkHistory>
@@ -26,7 +26,7 @@ export default function MainContent() {
             <Blogs></Blogs>
             <div id='contact' className='flex flex-row justify-center gap-8'>
                 <ContactForm></ContactForm>
-                <ContactInfo></ContactInfo>
+                {/* <ContactInfo></ContactInfo> */}
             </div>
             <CompanyTestimony></CompanyTestimony>
             <Footer></Footer>

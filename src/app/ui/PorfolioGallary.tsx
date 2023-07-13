@@ -1,9 +1,13 @@
 import PortFolioTabs from '@/components/PortFolioTabs'
 import TitleDescription from '@/components/TitleDescription'
 import React from 'react'
-import GallaryImage from '@/components/GallaryImage';
+import Image from 'next/image';
+import { getGallaryImages } from '../../../sanity/sanity-query';
+import { urlFor } from '../../../sanity/sanity-utils';
 
-export default function PorfolioGallary() {
+export default async function PorfolioGallary() {
+    const gallarys = await getGallaryImages()
+    console.log(gallarys)
     return (
         <>
             <TitleDescription title='Portfolio' description='Amet minim mollit non deserunt ullamco est sit 
@@ -15,8 +19,12 @@ export default function PorfolioGallary() {
 
             <div className='grid self-center w-full grid-cols-3 gap-5 pt-6'>
                 {
-                    items.map((number) => {
-                        return (<div className='text-center rounded aspect-square bg-yellowes' key={number}><GallaryImage /></div>);
+                    gallarys.map((e: any) => {
+                        return (<div className='text-center rounded aspect-square bg-yellowes' key={e._key}>
+
+                            <Image key={e._id} alt={e.image.alt} className=' aspect-square w-1/3-,'
+                                src={urlFor(e.image).url()} width="500" height="500"   ></Image>
+                        </div>);
                     })
                 }
             </div>
